@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Light</title>
      <style>
-          .container{
+          .container {
                width: 200px;
                height: 200px;
-               margin: auto ;
+               margin: auto;
                display: flex;
                flex-direction: column;
                justify-content: center;
           }
+
           img {
                width: 100%;
                height: 100%;
           }
      </style>
 </head>
+
 <body>
      <div id="root">
           <div class="container">
                <img src="img/light-off.png" alt="">
-               <button >Turn On</button>
+               <button>Turn On</button>
           </div>
      </div>
-     <script src="man.js"></script>
+     <script>
+          const light = document.querySelector('img');
+          const button = document.querySelector('button');
+          let state = false;
+
+
+          button.onclick = () => {
+               if (!state) {
+                    light.src = "img/light-on.jpg";
+                    button.innerText = "Turn Off"
+               } else {
+                    light.src = "img/light-off.png";
+                    button.innerText = "Turn On"
+               }
+               state = !state;
+          }
+     </script>
 </body>
+
 </html>
