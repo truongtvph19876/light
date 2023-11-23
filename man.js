@@ -2,7 +2,8 @@ const light = document.querySelector('img');
 const button = document.querySelector('button');
 let state = false;
 
-button.addEventListener('click', () => {
+
+button.onclick = () => {
      if (!state) {
           light.src = "img/light-on.jpg";
           button.innerText = "Turn Off"
@@ -11,4 +12,4 @@ button.addEventListener('click', () => {
           button.innerText = "Turn On"
      }
      state = !state;
-})
+}
